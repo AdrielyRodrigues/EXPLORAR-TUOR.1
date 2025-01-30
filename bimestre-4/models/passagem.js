@@ -1,9 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-
-
-
 const Passagem = sequelize.define('Passagem', {
     cod: {
       type: DataTypes.INTEGER,
@@ -33,6 +30,14 @@ const Passagem = sequelize.define('Passagem', {
     embarque: {
       type: DataTypes.STRING(100),
       allowNull: false,
+    },
+    FK_turistas_cpf: { 
+      type: DataTypes.STRING(11),
+      references: {
+        model: Turista, 
+        key: 'cpf',     
+      },
+      allowNull: true, 
     },
   });
 

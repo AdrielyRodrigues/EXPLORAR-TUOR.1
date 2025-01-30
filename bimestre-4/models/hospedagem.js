@@ -19,6 +19,14 @@ const Hospedagem = sequelize.define('Hospedagem', {
       type: DataTypes.STRING(100),
       allowNull: false,
     },
+    FK_passagens_cod: {  
+      type: DataTypes.INTEGER,
+      references: {
+        model: Passagem, 
+        key: 'cod',     
+      },
+      allowNull: true, 
+    },
   });
 
   module.exports = Hospedagem;

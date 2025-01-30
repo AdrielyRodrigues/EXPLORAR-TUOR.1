@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-
 const Turista = sequelize.define('Turista', {
     cpf: {
       type: DataTypes.STRING(11),
@@ -21,4 +20,4 @@ const Turista = sequelize.define('Turista', {
     },
   });
 
-  module.exports = reservas;
+  module.exports = Turista;

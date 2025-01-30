@@ -23,6 +23,14 @@ const Excursao = sequelize.define('Excursao', {
     valor: {
       type: DataTypes.INTEGER,
     },
+    FK_guias_cod: {  
+      type: DataTypes.INTEGER,
+      references: {
+        model: Guia, 
+        key: 'cod',   
+      },
+      allowNull: true, 
+    },
   });
   
   module.exports = Excursao;

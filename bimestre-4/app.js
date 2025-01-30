@@ -1,5 +1,4 @@
 const sequelize = require('./db');
-// Importar os models
 const setupRelationships = require('./models/relationships');
 
 (async () => {

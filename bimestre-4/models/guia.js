@@ -25,6 +25,14 @@ const Guia = sequelize.define('Guia', {
       type: DataTypes.STRING(50),
       allowNull: false,
     },
+    FK_hospedagem_cod: { 
+      type: DataTypes.INTEGER,
+      references: {
+        model: Hospedagem, 
+        key: 'cod',      
+      },
+      allowNull: true, 
+    },
   });
 
   module.exports = Guia;
