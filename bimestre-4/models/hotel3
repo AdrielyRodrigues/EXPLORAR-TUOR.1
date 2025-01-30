@@ -1,0 +1,69 @@
+const { DataTypes } = require('sequelize');
+const sequelize = require('../db');
+
+const hotel3 = sequelize.define('User', {
+  id: {
+    type: DataTypes.INET,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+  endereco: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  cidade: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  estado: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  estrela: {
+    type: DataTypes.INET,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  tipo_de_checkin: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  data_de_checkiout: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+  checkout_date: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+  nao_reembolsavel: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+
+tranferencia_incluida: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    unique: false, // Atributo único
+  }
+});
+
+module.exports = hotel3;

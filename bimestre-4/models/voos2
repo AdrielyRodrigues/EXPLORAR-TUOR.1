@@ -1,0 +1,58 @@
+const { DataTypes } = require('sequelize');
+const sequelize = require('../db');
+
+const Voos2 = sequelize.define('User', {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  origem: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+  destino: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true, // Atributo único
+  },
+
+  Data_partida: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  horario: {
+    type: DataTypes.TIME,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  tempo_viagem: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  paradas: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  preco: {
+    type: DataTypes.DECIMAL,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  reembolsavel: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  }
+});
+
+module.exports = Voos2;
