@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-const usuarios2 = sequelize.define('User', {
+const Usuario = sequelize.define('Usuario', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -10,20 +10,18 @@ const usuarios2 = sequelize.define('User', {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: false, // Atributo único
+    unique: false,
   },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true, // Atributo único
+    unique: true,
   },
-
   senha: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: false, // Atributo único
   },
-
 });
 
-module.exports = usuarios2;
+
+module.exports = usuarios;

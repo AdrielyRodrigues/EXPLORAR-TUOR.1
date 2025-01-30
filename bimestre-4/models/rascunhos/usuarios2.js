@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../../db');
 
-const Turistas = sequelize.define('User', {
+const usuarios2 = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -22,7 +22,8 @@ const Turistas = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
-  }
+  },
+
 });
 
-module.exports = Turistas;
+module.exports = usuarios2;

@@ -1,40 +1,48 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../../db');
 
-const Guias = sequelize.define('User', {
+const voos = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  username: {
+  origem: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
   },
-  cpf: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true, // Atributo único
-  },
-
-  telefone: {
+  destino: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
   },
 
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true, // Atributo único
-  },
-
-  senhas: {
-    type: DataTypes.STRING,
+  data_partido: {
+    type: DataTypes.DATE,
     allowNull: false,
     unique: false, // Atributo único
   },
+
+  data_partida: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+  
+  
+    horario: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  preco: {
+    type: DataTypes.DECIMAL,
+    allowNull: false,
+    unique: false, // Atributo único
+  }
+
 });
 
-module.exports = Guias;
+module.exports = voos;

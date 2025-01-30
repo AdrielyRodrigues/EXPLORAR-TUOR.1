@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../../db');
 
-const Destinoss = sequelize.define('User', {
+const Guias = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -10,19 +10,31 @@ const Destinoss = sequelize.define('User', {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: false, // Atributo único
+  },
+  cpf: {
+    type: DataTypes.STRING,
+    allowNull: false,
     unique: true, // Atributo único
   },
-  pais: {
+
+  telefone: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
   },
 
-  preco: {
-    type: DataTypes.DECIMAL,
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true, // Atributo único
+  },
+
+  senhas: {
+    type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
-  }
+  },
 });
 
-module.exports = Destinoss;
+module.exports = Guias;

@@ -1,48 +1,40 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../../db');
 
-const voos = sequelize.define('User', {
+const hotel2 = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  origem: {
+  username: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
   },
-  destino: {
+  localizacao: {
     type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
   },
 
-  data_partido: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    unique: false, // Atributo único
-  },
-
-  data_partida: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    unique: false, // Atributo único
-  },
-  
-  
-    horario: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    unique: false, // Atributo único
-  },
-
-  preco: {
+  preco_diaria: {
     type: DataTypes.DECIMAL,
     allowNull: false,
     unique: false, // Atributo único
-  }
+  },
 
+  estrelas: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  CafedaManhã: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
 });
 
-module.exports = voos;
+module.exports = hotel2;

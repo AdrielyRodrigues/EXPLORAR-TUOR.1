@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../../db');
 
-const hotel2 = sequelize.define('User', {
+const hoteis = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -22,19 +22,7 @@ const hotel2 = sequelize.define('User', {
     type: DataTypes.DECIMAL,
     allowNull: false,
     unique: false, // Atributo único
-  },
-
-  estrelas: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    unique: false, // Atributo único
-  },
-
-  CafedaManhã: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: false, // Atributo único
-  },
+  }
 });
 
-module.exports = hotel2;
+module.exports = hoteis;

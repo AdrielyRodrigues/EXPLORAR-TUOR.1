@@ -1,45 +1,48 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../../db');
 
-const personalizardatas = sequelize.define('User', {
+const Voos3 = sequelize.define('User', {
   id: {
     type: DataTypes.INET,
     autoIncrement: true,
     primaryKey: true,
   },
-  nome_completo: {
-    type: DataTypes.INTEGER,
+  origem: {
+    type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
   },
-  dataa_nas: {
+  destino: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
+
+  Data_partida: {
     type: DataTypes.DATE,
     allowNull: false,
     unique: false, // Atributo único
   },
 
-  genero: {
-    type: DataTypes.INTEGER,
+  horario_chegada: {
+    type: DataTypes.TIME,
     allowNull: false,
     unique: false, // Atributo único
   },
-  email: {
-    type: DataTypes.INTEGER,
+
+  duracao_voo: {
+    type: DataTypes.TIME,
     allowNull: false,
     unique: false, // Atributo único
   },
-  celular: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    unique: false, // Atributo único
-  },
-  cpf: {
+
+  class: {
     type: DataTypes.INTEGER,
     allowNull: false,
     unique: false, // Atributo único
   },
 
- 
+
 });
 
-module.exports = personalizardatas;
+module.exports = Voos3;

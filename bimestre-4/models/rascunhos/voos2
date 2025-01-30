@@ -1,9 +1,9 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../db');
+const sequelize = require('../../db');
 
-const Voos3 = sequelize.define('User', {
+const Voos2 = sequelize.define('User', {
   id: {
-    type: DataTypes.INET,
+    type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
@@ -15,7 +15,7 @@ const Voos3 = sequelize.define('User', {
   destino: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: false, // Atributo único
+    unique: true, // Atributo único
   },
 
   Data_partida: {
@@ -24,25 +24,35 @@ const Voos3 = sequelize.define('User', {
     unique: false, // Atributo único
   },
 
-  horario_chegada: {
+  horario: {
     type: DataTypes.TIME,
     allowNull: false,
     unique: false, // Atributo único
   },
 
-  duracao_voo: {
-    type: DataTypes.TIME,
+  tempo_viagem: {
+    type: DataTypes.STRING,
     allowNull: false,
     unique: false, // Atributo único
   },
 
-  class: {
+  paradas: {
     type: DataTypes.INTEGER,
     allowNull: false,
     unique: false, // Atributo único
   },
 
+  preco: {
+    type: DataTypes.DECIMAL,
+    allowNull: false,
+    unique: false, // Atributo único
+  },
 
+  reembolsavel: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: false, // Atributo único
+  }
 });
 
-module.exports = Voos3;
+module.exports = Voos2;
