@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-const Guias = sequelize.define('Guias', {
+const Usuarios = sequelize.define('Usuarios', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -10,14 +10,6 @@ const Guias = sequelize.define('Guias', {
   nome: {
     type: DataTypes.STRING(100),
     allowNull: false,
-  },
-  cpf: {
-    type: DataTypes.STRING(14),
-    unique: true,
-    allowNull: false,
-  },
-  telefone: {
-    type: DataTypes.STRING(15),
   },
   email: {
     type: DataTypes.STRING(100),
@@ -28,6 +20,9 @@ const Guias = sequelize.define('Guias', {
     type: DataTypes.STRING(255),
     allowNull: false,
   },
+}, {
+  freezeTableName: true,
+  timestamps: true,
 });
 
-module.exports = Guias;
+module.exports = Usuarios;

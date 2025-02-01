@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
-const PersonalData = require('./personal_data');
 
 const Pagamentos = sequelize.define('Pagamentos', {
   id: {
@@ -33,8 +32,17 @@ const Pagamentos = sequelize.define('Pagamentos', {
   boleto_number: {
     type: DataTypes.STRING(50),
   },
+  personal_data_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: 'Dados_Pessoais',
+      key: 'id',
+    },
+  },
+}, {
+  freezeTableName: true,
+  timestamps: true,
 });
-
-Pagamentos.belongsTo(PersonalData, { foreignKey: 'personal_data_id' });
 
 module.exports = Pagamentos;

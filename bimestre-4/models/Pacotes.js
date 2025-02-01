@@ -1,41 +1,39 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-const Vooss = sequelize.define('Vooss', {
+const Pacotes = sequelize.define('Pacotes', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  origem: {
-    type: DataTypes.STRING(100),
-    allowNull: false,
-  },
   destino: {
     type: DataTypes.STRING(100),
     allowNull: false,
   },
-  data_partida: {
+  localizacao: {
+    type: DataTypes.STRING(50),
+    allowNull: false,
+  },
+  data_inicio: {
     type: DataTypes.DATE,
     allowNull: false,
   },
-  horario: {
-    type: DataTypes.TIME,
+  data_fim: {
+    type: DataTypes.DATE,
     allowNull: false,
-  },
-  tempo_viagem: {
-    type: DataTypes.STRING(20),
-  },
-  paradas: {
-    type: DataTypes.INTEGER,
   },
   preco: {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
   },
-  reembolsavel: {
-    type: DataTypes.BOOLEAN,
+  imagem: {
+    type: DataTypes.STRING(255),
+    allowNull: false,
   },
+}, {
+  freezeTableName: true,
+  timestamps: true,
 });
 
-module.exports = Vooss;
+module.exports = Pacotes;

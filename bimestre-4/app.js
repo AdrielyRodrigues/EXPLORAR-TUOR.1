@@ -1,5 +1,5 @@
 const sequelize = require('./db');
-const setupRelationships = require('./models/relationships');
+const setupRelationships = require('./relationships');
 
 (async () => {
   try {

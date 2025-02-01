@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-const Flights = sequelize.define('Flights', {
+const VoosFlights = sequelize.define('Voos_Flights', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -35,6 +35,9 @@ const Flights = sequelize.define('Flights', {
     type: DataTypes.STRING(20),
     allowNull: false,
   },
+}, {
+  freezeTableName: true,
+  timestamps: true,
 });
 
-module.exports = Flights;
+module.exports = VoosFlights;

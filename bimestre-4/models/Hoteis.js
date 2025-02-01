@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-const Destinos = sequelize.define('Destinos', {
+const Hoteis = sequelize.define('Hoteis', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -11,9 +11,15 @@ const Destinos = sequelize.define('Destinos', {
     type: DataTypes.STRING(100),
     allowNull: false,
   },
-  descricao: {
-    type: DataTypes.TEXT,
+  localizacao: {
+    type: DataTypes.STRING(100),
   },
+  preco_diaria: {
+    type: DataTypes.DECIMAL(10, 2),
+  },
+}, {
+  freezeTableName: true,
+  timestamps: true,
 });
 
-module.exports = Destinos;
+module.exports = Hoteis;

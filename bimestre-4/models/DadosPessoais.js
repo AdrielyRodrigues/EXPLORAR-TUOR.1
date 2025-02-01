@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-const PersonalData = sequelize.define('PersonalData', {
+const DadosPessoais = sequelize.define('Dados_Pessoais', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -31,6 +31,9 @@ const PersonalData = sequelize.define('PersonalData', {
     type: DataTypes.STRING(14),
     allowNull: false,
   },
+}, {
+  freezeTableName: true,
+  timestamps: true,
 });
 
-module.exports = PersonalData;
+module.exports = DadosPessoais;

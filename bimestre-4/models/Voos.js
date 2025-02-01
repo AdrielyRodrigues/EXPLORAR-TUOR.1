@@ -1,25 +1,35 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
-const Turistas = sequelize.define('Turistas', {
+const Voos = sequelize.define('Voos', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  nome: {
+  origem: {
     type: DataTypes.STRING(100),
     allowNull: false,
   },
-  email: {
+  destino: {
     type: DataTypes.STRING(100),
-    unique: true,
     allowNull: false,
   },
-  senha: {
-    type: DataTypes.STRING(255),
+  data_partida: {
+    type: DataTypes.DATE,
     allowNull: false,
   },
+  horario: {
+    type: DataTypes.TIME,
+    allowNull: false,
+  },
+  preco: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false,
+  },
+}, {
+  freezeTableName: true,
+  timestamps: true,
 });
 
-module.exports = Turistas;
+module.exports = Voos;
